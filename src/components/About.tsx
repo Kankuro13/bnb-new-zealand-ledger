@@ -1,75 +1,112 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Shield, Clock, Heart } from "lucide-react";
+import { Rocket, Shield, Clock, Heart, Zap } from "lucide-react";
 
 export const About = () => {
   const values = [
     {
-      icon: Award,
-      title: "Excellence",
-      description: "We strive for the highest standards in all our accounting services"
+      icon: Rocket,
+      title: "Innovation First",
+      description: "We leverage cutting-edge technology to revolutionize traditional accounting practices",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: Shield,
-      title: "Trust & Integrity",
-      description: "Your business data is safe with us, and we operate with complete transparency"
+      title: "Fortress Security",
+      description: "Military-grade encryption and bulletproof data protection for complete peace of mind",
+      gradient: "from-green-500 to-emerald-500"
     },
     {
       icon: Clock,
-      title: "Reliability",
-      description: "Consistent, timely service delivery you can depend on"
+      title: "Lightning Speed",
+      description: "Instant processing and real-time insights that keep you ahead of the competition",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: Heart,
-      title: "Personal Touch",
-      description: "We treat every client like family, providing personalized attention"
+      title: "Human Connection",
+      description: "Technology enhanced by genuine care and personalized attention to your success",
+      gradient: "from-orange-500 to-red-500"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">About B&B Tax and Accounting</h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Founded with a mission to simplify accounting for New Zealand small businesses, 
-              B&B Tax and Accounting Service Limited has been serving the community with 
-              dedication and expertise for years.
-            </p>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Our team of qualified accountants and bookkeepers understand the unique challenges 
-              faced by small business owners. We combine technical expertise with a personal 
-              approach to deliver accounting solutions that truly make a difference.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              From GST filing to payroll management, we handle the numbers so you can focus 
-              on what you do best - running your business.
-            </p>
+    <section id="about" className="py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/30 to-background" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
+          <div className="order-2 lg:order-1">
+            <div className="flex items-center space-x-2 mb-6">
+              <Zap className="h-5 w-5 text-accent" />
+              <span className="text-accent font-mono text-sm tracking-wider uppercase">About Our Mission</span>
+            </div>
+            
+            <h2 className="text-5xl font-bold mb-8">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Redefining
+              </span>
+              <br />
+              <span className="text-foreground">Accounting Excellence</span>
+            </h2>
+            
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                At B&B Tax and Accounting, we're not just another accounting firm—we're 
+                <span className="text-primary font-semibold"> digital transformation pioneers</span> revolutionizing 
+                how New Zealand businesses handle their finances.
+              </p>
+              <p>
+                Our fusion of <span className="text-accent font-semibold">advanced AI technology</span> and 
+                deep industry expertise creates an unparalleled accounting experience that's both 
+                incredibly powerful and refreshingly human.
+              </p>
+              <p>
+                We believe every small business deserves enterprise-level financial intelligence, 
+                which is why we've built our platform to deliver 
+                <span className="text-primary font-semibold"> institutional-grade insights</span> with 
+                the simplicity your team needs.
+              </p>
+            </div>
           </div>
           
-          <div>
-            <img 
-              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-              alt="Our modern office"
-              className="rounded-lg shadow-lg"
-            />
+          <div className="order-1 lg:order-2 relative">
+            <div className="relative z-10">
+              <img 
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="Modern office with advanced technology"
+                className="rounded-3xl shadow-2xl"
+              />
+            </div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl -z-10 animate-pulse" />
+            <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-2xl animate-float opacity-80" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-30" />
           </div>
         </div>
 
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Values</h3>
+        <div>
+          <h3 className="text-3xl font-bold text-center mb-16">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Our Core Values
+            </span>
+          </h3>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <value.icon className="h-8 w-8 text-blue-900" />
+              <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 text-center overflow-hidden">
+                <CardHeader className="relative pb-4">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
+                    <value.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl text-gray-900">{value.title}</CardTitle>
+                  <div className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${value.gradient} rounded-full opacity-10 group-hover:scale-150 transition-transform duration-500`} />
+                  <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
+                    {value.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{value.description}</p>
+                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                    {value.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}

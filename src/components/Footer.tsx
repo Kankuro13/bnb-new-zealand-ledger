@@ -1,71 +1,125 @@
 
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Rocket, Github, Twitter, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-b from-background to-card border-t border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">B&B Tax and Accounting Service Limited</h3>
-            <p className="text-gray-300 mb-4 leading-relaxed">
-              Your trusted partner for comprehensive accounting services in New Zealand. 
-              We help small businesses stay compliant, organized, and focused on growth.
+          <div className="lg:col-span-2 space-y-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                <Rocket className="h-7 w-7 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  B&B Tax
+                </h3>
+                <p className="text-xs text-muted-foreground font-mono">NEXT-GEN ACCOUNTING</p>
+              </div>
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed max-w-md">
+              Revolutionizing New Zealand's accounting landscape with AI-powered solutions 
+              that transform traditional processes into intelligent, automated workflows.
             </p>
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">123 Queen Street, Auckland 1010, New Zealand</span>
+            
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <MapPin className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                  Level 15, Innovation Tower, Auckland 1010
+                </span>
               </div>
-              <div className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">+64 9 123 4567</span>
+              <div className="flex items-center space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                  +64 9 123 4567
+                </span>
               </div>
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">info@bnbaccounting.co.nz</span>
+              <div className="flex items-center space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Mail className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                  hello@bnbtax.nz
+                </span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
-              <li><a href="#team" className="text-gray-300 hover:text-white transition-colors">Team</a></li>
-              <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+            <h4 className="text-lg font-semibold text-foreground mb-6">Navigation</h4>
+            <ul className="space-y-3">
+              {['Home', 'Services', 'About', 'Team', 'Testimonials', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a 
+                    href={`#${item.toLowerCase()}`} 
+                    className="text-muted-foreground hover:text-primary transition-colors hover:translate-x-2 transform duration-200 inline-block"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="text-gray-300">Payroll Management</li>
-              <li className="text-gray-300">GST Filing & Compliance</li>
-              <li className="text-gray-300">Income Tax Returns</li>
-              <li className="text-gray-300">Accounts Receivable/Payable</li>
-              <li className="text-gray-300">PAYE Services</li>
-              <li className="text-gray-300">Xero Training</li>
-              <li className="text-gray-300">Credit Control</li>
+            <h4 className="text-lg font-semibold text-foreground mb-6">Solutions</h4>
+            <ul className="space-y-3 text-sm">
+              {[
+                'AI Payroll Management',
+                'Smart GST Filing',
+                'Tax Optimization',
+                'Digital Transformation',
+                'Xero Mastery',
+                'Compliance Automation',
+                'Financial Intelligence'
+              ].map((service) => (
+                <li key={service} className="text-muted-foreground hover:text-accent transition-colors cursor-pointer">
+                  {service}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2024 B&B Tax and Accounting Service Limited. All rights reserved.
+        <div className="border-t border-border mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-muted-foreground text-sm">
+              © 2024 B&B Tax and Accounting Service Limited. Pioneering the future of finance.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+            
+            <div className="flex items-center space-x-6">
+              <div className="flex space-x-4">
+                {[
+                  { icon: Github, gradient: 'from-gray-600 to-gray-800' },
+                  { icon: Twitter, gradient: 'from-blue-400 to-blue-600' },
+                  { icon: Linkedin, gradient: 'from-blue-600 to-blue-800' }
+                ].map((social, index) => (
+                  <div 
+                    key={index}
+                    className={`w-10 h-10 bg-gradient-to-br ${social.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}
+                  >
+                    <social.icon className="h-5 w-5 text-white" />
+                  </div>
+                ))}
+              </div>
+              
+              <div className="h-6 w-px bg-border" />
+              
+              <div className="flex space-x-6 text-sm">
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Terms</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Cookies</a>
+              </div>
             </div>
           </div>
         </div>

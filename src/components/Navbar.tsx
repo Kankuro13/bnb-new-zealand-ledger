@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
@@ -16,27 +16,36 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50">
+    <nav className="fixed w-full z-50 backdrop-blur-xl bg-background/80 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-blue-900">B&B Tax & Accounting</h1>
+            <div className="flex-shrink-0 flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center animate-glow">
+                <Zap className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  B&B Tax
+                </h1>
+                <p className="text-xs text-muted-foreground font-mono">ACCOUNTING.NZ</p>
+              </div>
             </div>
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-secondary/50 rounded-lg relative group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-3/4 group-hover:left-1/8 transition-all duration-300 rounded-full" />
               </a>
             ))}
-            <Button className="bg-blue-900 hover:bg-blue-800">
+            <Button className="ml-4 bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-primary-foreground font-semibold px-6 rounded-full">
               Get Quote
             </Button>
           </div>
@@ -47,6 +56,7 @@ export const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
+              className="text-foreground hover:bg-secondary"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -56,19 +66,19 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+        <div className="md:hidden border-t border-border">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-xl">
             {menuItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-900 block px-3 py-2 text-base font-medium"
+                className="text-muted-foreground hover:text-primary block px-4 py-3 text-base font-medium hover:bg-secondary/50 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </a>
             ))}
-            <Button className="w-full mt-4 bg-blue-900 hover:bg-blue-800">
+            <Button className="w-full mt-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full">
               Get Quote
             </Button>
           </div>

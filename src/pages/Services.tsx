@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Jumbotron } from "@/components/Jumbotron";
 import { Zap, Users, FileText, DollarSign, CreditCard, Building, BookOpen, GraduationCap, TrendingUp, Sparkles, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -75,24 +75,18 @@ export const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-2 mb-6">
-            <Zap className="h-6 w-6 text-accent" />
-            <span className="text-accent font-mono text-sm tracking-wider uppercase">Our Services</span>
-          </div>
-          <h1 className="text-5xl font-bold mb-6">
-            <span className="text-primary">
-              Our Services
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Comprehensive accounting services tailored to the needs of small businesses across New Zealand. 
-            Our experienced team helps you stay compliant, organized, and focused on growth.
-          </p>
-        </div>
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="Our Services"
+        subtitle="Comprehensive Accounting Solutions"
+        description="Professional accounting services tailored for New Zealand businesses. From payroll management to tax compliance, we've got you covered."
+        backgroundImage="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        icon={<Sparkles className="h-5 w-5 text-yellow-400" />}
+        badge="Professional Services"
+      />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 overflow-hidden h-full flex flex-col">
@@ -109,11 +103,12 @@ export const ServicesPage = () => {
                 <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors mb-6 flex-grow">
                   {service.description}
                 </p>
-                <Link to={service.link} className="mt-auto">
-                  <Button variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10">
-                    View Details
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                <Link 
+                  to={service.link} 
+                  className="mt-auto text-primary hover:text-primary/80 font-medium inline-flex items-center transition-colors"
+                >
+                  View Details
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -128,7 +123,7 @@ export const ServicesPage = () => {
           </div>
         </div>
       </div>
-      </div>
+      
       <Footer />
     </div>
   );

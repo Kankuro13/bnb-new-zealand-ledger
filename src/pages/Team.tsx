@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Mail, Phone, Linkedin, Award } from "lucide-react";
+import { Jumbotron } from "@/components/Jumbotron";
+import { Mail, Phone, Linkedin, Award, Users, Sparkles } from "lucide-react";
 
 export const TeamPage = () => {
   const teamMembers = [
@@ -46,7 +47,17 @@ export const TeamPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="Our Professional Team"
+        subtitle="Meet Our Qualified Experts"
+        description="Our dedicated team of qualified professionals with years of experience helping New Zealand businesses succeed."
+        backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        icon={<Users className="h-5 w-5 text-yellow-400" />}
+        badge="Our Team"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-2 mb-6">
@@ -133,7 +144,7 @@ export const TeamPage = () => {
           </div>
         </div>
       </div>
-      </div>
+      
       <Footer />
     </div>
   );

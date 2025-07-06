@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Jumbotron } from "@/components/Jumbotron";
 import { Building, Users, Zap, DollarSign, FileText, TrendingUp, Stethoscope, GraduationCap, Car, Home, Briefcase, Sparkles } from "lucide-react";
 
 export const IndustriesPage = () => {
@@ -80,23 +81,18 @@ export const IndustriesPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <Building className="h-6 w-6 text-accent" />
-              <span className="text-accent font-mono text-sm tracking-wider uppercase">Industry Expertise</span>
-            </div>
-            <h1 className="text-5xl font-bold mb-6">
-              <span className="text-primary">
-                Industries We Serve
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              With specialized knowledge across diverse industry sectors, we provide tailored accounting solutions 
-              that understand your unique business challenges and regulatory requirements.
-            </p>
-          </div>
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="Industries We Serve"
+        subtitle="Industry Expertise"
+        description="With specialized knowledge across diverse industry sectors, we provide tailored accounting solutions that understand your unique business challenges and regulatory requirements."
+        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        icon={<Building className="h-5 w-5 text-yellow-400" />}
+        badge="Industry Expertise"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {industries.map((industry, index) => (
@@ -142,8 +138,8 @@ export const IndustriesPage = () => {
               <span>Contact us to discuss your specific requirements</span>
             </div>
           </div>
-        </div>
       </div>
+      
       <Footer />
     </div>
   );

@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Rocket, Shield, Clock, Heart, Zap } from "lucide-react";
+import { Jumbotron } from "@/components/Jumbotron";
+import { Rocket, Shield, Clock, Heart, Zap, Sparkles } from "lucide-react";
 
 export const AboutPage = () => {
   const values = [
@@ -30,23 +31,20 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="About B&B Tax"
+        subtitle="Professional Accounting Excellence"
+        description="At B&B Tax and Accounting Service Limited, we specialize in providing comprehensive accounting services tailored to the needs of small businesses across New Zealand."
+        backgroundImage="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        icon={<Sparkles className="h-5 w-5 text-yellow-400" />}
+        badge="About Our Company"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
           <div className="order-2 lg:order-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <Zap className="h-5 w-5 text-accent" />
-              <span className="text-accent font-mono text-sm tracking-wider uppercase">About Our Company</span>
-            </div>
-            
-            <h1 className="text-5xl font-bold mb-8">
-              <span className="text-primary">
-                Professional
-              </span>
-              <br />
-              <span className="text-foreground">Accounting Excellence</span>
-            </h1>
-            
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 At B&B Tax and Accounting Service Limited, we specialize in providing 
@@ -189,7 +187,7 @@ export const AboutPage = () => {
           </div>
         </div>
       </div>
-      </div>
+      
       <Footer />
     </div>
   );

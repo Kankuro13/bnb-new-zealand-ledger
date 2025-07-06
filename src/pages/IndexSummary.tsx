@@ -214,12 +214,15 @@ export const IndexSummary = () => {
                   </div>
                   <h3 className="font-semibold text-foreground mb-2 text-sm">{service.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-grow">{service.desc}</p>
-                  <Link to={service.link} className="mt-auto">
-                    <Button variant="outline" size="sm" className="w-full text-xs border-primary/30 text-primary hover:bg-primary/10">
+                  <div className="mt-auto flex justify-end">
+                    <Link 
+                      to={service.link} 
+                      className="text-primary hover:text-primary/80 font-medium text-xs inline-flex items-center transition-colors"
+                    >
                       View Details
                       <ArrowRight className="ml-1 h-3 w-3" />
-                    </Button>
-                  </Link>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             ))}

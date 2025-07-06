@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
+import { Jumbotron } from "@/components/Jumbotron";
+import { MapPin, Phone, Mail, Clock, MessageSquare, Sparkles } from "lucide-react";
 
 export const ContactPage = () => {
   const contactInfo = [
@@ -37,24 +38,18 @@ export const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-2 mb-6">
-            <MessageSquare className="h-6 w-6 text-accent" />
-            <span className="text-accent font-mono text-sm tracking-wider uppercase">Get In Touch</span>
-          </div>
-          <h1 className="text-5xl font-bold mb-6">
-            <span className="text-primary">
-              Contact Us Today
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your business finances? Get in touch with our professional team 
-            for a free consultation and discover how we can help your business thrive.
-          </p>
-        </div>
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="Contact Us Today"
+        subtitle="Get In Touch"
+        description="Ready to transform your business finances? Get your free consultation today and discover how we can help your business thrive."
+        backgroundImage="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        icon={<MessageSquare className="h-5 w-5 text-yellow-400" />}
+        badge="Get In Touch"
+      />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           {/* Contact Form */}
           <Card className="gradient-card border-0 overflow-hidden">
@@ -195,7 +190,7 @@ export const ContactPage = () => {
           </div>
         </div>
       </div>
-      </div>
+      
       <Footer />
     </div>
   );

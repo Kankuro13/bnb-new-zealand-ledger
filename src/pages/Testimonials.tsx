@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Star, Quote, Users } from "lucide-react";
+import { Jumbotron } from "@/components/Jumbotron";
+import { Star, Quote, Users, MessageSquare, Sparkles } from "lucide-react";
 
 export const TestimonialsPage = () => {
   const testimonials = [
@@ -64,24 +65,18 @@ export const TestimonialsPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-2 mb-6">
-            <Star className="h-6 w-6 text-accent" />
-            <span className="text-accent font-mono text-sm tracking-wider uppercase">Client Testimonials</span>
-          </div>
-          <h1 className="text-5xl font-bold mb-6">
-            <span className="text-primary">
-              What Our Clients Say
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our valued clients have to say about 
-            working with B&B Tax and Accounting Service Limited.
-          </p>
-        </div>
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="What Our Clients Say"
+        subtitle="Client Testimonials"
+        description="Don't just take our word for it. Here's what our valued clients have to say about working with B&B Tax and Accounting Service Limited."
+        backgroundImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        icon={<MessageSquare className="h-5 w-5 text-yellow-400" />}
+        badge="Client Testimonials"
+      />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => (
@@ -152,7 +147,7 @@ export const TestimonialsPage = () => {
           </div>
         </div>
       </div>
-      </div>
+      
       <Footer />
     </div>
   );

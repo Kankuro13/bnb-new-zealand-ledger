@@ -1,4 +1,3 @@
-
 import { MapPin, Phone, Mail, Rocket, Github, Twitter, Linkedin } from "lucide-react";
 
 export const Footer = () => {
@@ -123,7 +122,7 @@ export const Footer = () => {
               
               <div className="h-6 w-px bg-border" />
               
-              <div className="flex space-x-6 text-sm">
+              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-sm items-start md:items-center">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy</a>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Terms</a>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Cookies</a>

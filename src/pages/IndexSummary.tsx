@@ -79,7 +79,7 @@ export const IndexSummary = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Geometric background elements */}
       <div className="geometric-shape w-96 h-96 -top-48 -left-48" />
-      <div className="geometric-shape w-64 h-64 top-1/3 -right-32" />
+      <div className="geometric-shape w-32 h-32 -right-8 top-1/3 md:w-64 md:h-64 md:-right-32" />
       <div className="geometric-shape w-80 h-80 bottom-1/4 -left-40" />
       
       {/* Hero Section with Slider */}

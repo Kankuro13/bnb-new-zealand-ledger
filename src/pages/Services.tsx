@@ -5,56 +5,56 @@ export const ServicesPage = () => {
   const services = [
     {
       icon: Users,
-      title: "Smart Payroll",
-      description: "Comprehensive payroll processing with real-time compliance monitoring, automated KiwiSaver management, and seamless integration with IRD systems for accurate, on-time payments.",
+      title: "Payroll Management",
+      description: "Accurate payroll processing, payslip preparation, leave management, and KiwiSaver compliance, ensuring your employees are paid correctly and on time.",
       gradient: "from-amber-600 to-yellow-600"
     },
     {
       icon: FileText,
-      title: "Dynamic AR",
-      description: "Intelligent accounts receivable management with predictive payment analytics, automated follow-up sequences, and comprehensive cash flow optimization strategies.",
+      title: "Accounts Receivable (AR)",
+      description: "We manage your invoicing, follow up on outstanding payments, and help maintain a healthy cash flow for your business.",
       gradient: "from-orange-600 to-amber-600"
     },
     {
       icon: CreditCard,
-      title: "Streamlined AP",
-      description: "Next-generation accounts payable processing with OCR invoice scanning, smart vendor payment optimization, and automated expense tracking systems.",
+      title: "Accounts Payable (AP)",
+      description: "Efficient handling of supplier invoices, payments, and expense tracking to keep your accounts up to date.",
       gradient: "from-yellow-600 to-orange-600"
     },
     {
       icon: DollarSign,
-      title: "Proactive Control",
-      description: "Advanced credit management with machine learning-powered risk assessment, automated collection processes, and real-time debtor monitoring.",
+      title: "Credit Control",
+      description: "Proactive monitoring and management of your customer debts to reduce overdue accounts and improve cash collection.",
       gradient: "from-amber-700 to-orange-600"
     },
     {
       icon: TrendingUp,
-      title: "Data Intelligence",
-      description: "Comprehensive payroll analytics with real-time reporting, predictive workforce insights, and customizable dashboard solutions for informed decision-making.",
+      title: "Payroll Data Entry",
+      description: "Fast and accurate data entry of payroll information to ensure smooth payroll runs and easy reporting.",
       gradient: "from-orange-700 to-amber-700"
     },
     {
       icon: Building,
-      title: "GST Automation",
-      description: "Fully automated GST filing with seamless IRD integration, real-time compliance verification, and comprehensive tax optimization strategies.",
+      title: "GST Filing & Compliance",
+      description: "Preparation and filing of Goods and Services Tax (GST) returns with IRD, so you never miss a deadline.",
       gradient: "from-yellow-700 to-orange-700"
     },
     {
       icon: Zap,
-      title: "PAYE Excellence",
-      description: "Revolutionary PAYE management with instant calculations, automated IRD submissions, and comprehensive employee tax optimization services.",
+      title: "PAYE Services",
+      description: "We calculate and manage your Pay As You Earn (PAYE) obligations, ensuring correct deductions and timely payments to IRD.",
       gradient: "from-amber-600 to-yellow-700"
     },
     {
       icon: BookOpen,
-      title: "Tax Optimization",
-      description: "Advanced tax return preparation with AI-driven deduction identification, maximum efficiency optimization, and comprehensive compliance assurance.",
+      title: "Income Tax Returns",
+      description: "Preparation and filing of annual income tax returns for sole traders, partnerships, and companies, maximizing your tax efficiency and compliance.",
       gradient: "from-orange-600 to-amber-600"
     },
     {
       icon: GraduationCap,
-      title: "Xero Mastery",
-      description: "Comprehensive Xero training with immersive learning modules, personalized training paths, and ongoing support for your entire team.",
+      title: "Xero Accounting System Training",
+      description: "Hands-on training to help you and your team confidently use Xero for everyday bookkeeping, invoicing, payroll, GST returns, and reporting.",
       gradient: "from-yellow-600 to-amber-600"
     }
   ];
@@ -69,12 +69,12 @@ export const ServicesPage = () => {
           </div>
           <h1 className="text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Comprehensive Solutions
+              Our Services
             </span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Experience professional accounting services designed specifically for New Zealand businesses, 
-            combining traditional expertise with modern efficiency.
+            Comprehensive accounting services tailored to the needs of small businesses across New Zealand. 
+            Our experienced team helps you stay compliant, organized, and focused on growth.
           </p>
         </div>
 

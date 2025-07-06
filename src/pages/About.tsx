@@ -5,26 +5,26 @@ export const AboutPage = () => {
   const values = [
     {
       icon: Rocket,
-      title: "Innovation First",
-      description: "We leverage modern technology and proven methodologies to enhance traditional accounting practices for maximum efficiency.",
+      title: "Professional Excellence",
+      description: "We combine years of experience with proven methodologies to deliver exceptional accounting services that exceed expectations.",
       gradient: "from-amber-600 to-yellow-600"
     },
     {
       icon: Shield,
-      title: "Trusted Security",
-      description: "Professional-grade security measures and comprehensive data protection protocols ensure your financial information remains completely secure.",
+      title: "Trusted Partnership",
+      description: "Build long-term relationships with our clients based on trust, reliability, and consistent delivery of professional accounting services.",
       gradient: "from-orange-600 to-amber-600"
     },
     {
       icon: Clock,
-      title: "Timely Service",
-      description: "Efficient processing and reliable service delivery that keeps your business operations running smoothly and on schedule.",
+      title: "Timely & Accurate",
+      description: "Efficient processing and meticulous attention to detail ensures your accounting needs are met on time, every time.",
       gradient: "from-yellow-600 to-orange-600"
     },
     {
       icon: Heart,
-      title: "Personal Care",
-      description: "Dedicated support and personalized attention to understand your unique business needs and provide tailored solutions.",
+      title: "Small Business Focus",
+      description: "Specialized expertise in small business accounting with personalized service tailored to your unique requirements.",
       gradient: "from-amber-700 to-orange-600"
     }
   ];
@@ -49,20 +49,19 @@ export const AboutPage = () => {
             
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                At B&B Tax and Accounting Service Limited, we are dedicated to providing 
-                <span className="text-primary font-semibold"> exceptional accounting services</span> tailored 
-                specifically for small and medium businesses across New Zealand.
+                At B&B Tax and Accounting Service Limited, we specialize in providing 
+                <span className="text-primary font-semibold"> comprehensive accounting services</span> tailored 
+                to the needs of small businesses across New Zealand.
               </p>
               <p>
-                Our experienced team combines <span className="text-accent font-semibold">traditional expertise</span> with 
-                modern efficiency to deliver comprehensive financial solutions that help your business 
-                stay compliant, organized, and focused on growth.
+                Our <span className="text-accent font-semibold">experienced team</span> is dedicated to helping you 
+                stay compliant, organized, and focused on growing your business through professional 
+                accounting solutions that work.
               </p>
               <p>
-                We believe every business deserves professional-grade financial management, 
-                which is why we've built our services to deliver 
-                <span className="text-primary font-semibold"> enterprise-level solutions</span> with 
-                the personal attention your business needs.
+                We understand the unique challenges facing small businesses, 
+                which is why we provide <span className="text-primary font-semibold">personalized service</span> with 
+                the expertise and attention to detail your business deserves.
               </p>
             </div>
           </div>

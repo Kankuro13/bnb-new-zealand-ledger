@@ -21,8 +21,8 @@ export const Footer = () => {
             </div>
             
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              Revolutionizing New Zealand's accounting landscape with AI-powered solutions 
-              that transform traditional processes into intelligent, automated workflows.
+              Comprehensive accounting services tailored to the needs of small businesses across New Zealand. 
+              We help you stay compliant, organized, and focused on growing your business.
             </p>
             
             <div className="space-y-3">

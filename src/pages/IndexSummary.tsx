@@ -25,22 +25,23 @@ export const IndexSummary = () => {
             <div className="animate-slide-up">
               <div className="flex items-center space-x-2 mb-6">
                 <Sparkles className="h-5 w-5 text-accent" />
-                <span className="text-accent font-mono text-sm tracking-wider uppercase">Professional Accounting Solutions</span>
+                <span className="text-accent font-mono text-sm tracking-wider uppercase">Comprehensive Accounting Services</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  Professional
+                  B&B Tax and
                 </span>
                 <br />
-                <span className="text-foreground">Accounting</span>
+                <span className="text-foreground">Accounting Service</span>
                 <br />
-                <span className="text-muted-foreground text-3xl md:text-4xl">for NZ Businesses</span>
+                <span className="text-muted-foreground text-3xl md:text-4xl">Limited</span>
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-xl">
-                Comprehensive accounting services designed specifically for New Zealand businesses. 
-                We help you stay compliant, organized, and focused on growth.
+                We specialize in providing comprehensive accounting services tailored to the needs of 
+                small businesses across New Zealand. Our experienced team is dedicated to helping you 
+                stay compliant, organized, and focused on growing your business.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 mb-12">
@@ -59,10 +60,10 @@ export const IndexSummary = () => {
 
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: CheckCircle, text: "Professional Expertise" },
-                  { icon: TrendingUp, text: "Business Growth" },
-                  { icon: Sparkles, text: "Modern Solutions" },
-                  { icon: CheckCircle, text: "Full Compliance" }
+                  { icon: CheckCircle, text: "Experienced Team" },
+                  { icon: TrendingUp, text: "Small Business Focus" },
+                  { icon: Sparkles, text: "Complete Service" },
+                  { icon: CheckCircle, text: "IRD Compliance" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 group">
                     <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -106,9 +107,9 @@ export const IndexSummary = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
-              { icon: Users, title: "Payroll Management", desc: "Accurate payroll processing and KiwiSaver compliance" },
-              { icon: FileText, title: "Tax & Compliance", desc: "GST filing, PAYE, and income tax returns" },
-              { icon: DollarSign, title: "Financial Management", desc: "Accounts receivable, payable, and credit control" }
+              { icon: Users, title: "Payroll Management", desc: "Accurate payroll processing, payslip preparation, leave management, and KiwiSaver compliance" },
+              { icon: FileText, title: "GST & PAYE Services", desc: "GST filing, PAYE calculations, and IRD compliance management" },
+              { icon: DollarSign, title: "Accounts Management", desc: "Accounts receivable, accounts payable, and credit control services" }
             ].map((service, index) => (
               <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0">
                 <CardHeader className="text-center">
@@ -146,9 +147,9 @@ export const IndexSummary = () => {
                 </span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We are dedicated to providing exceptional accounting services tailored specifically 
-                for small and medium businesses across New Zealand. Our experienced team combines 
-                traditional expertise with modern efficiency.
+                At B&B Tax and Accounting Service Limited, we specialize in providing comprehensive 
+                accounting services tailored to the needs of small businesses across New Zealand. 
+                Our experienced team is dedicated to helping you stay compliant, organized, and focused on growing your business.
               </p>
               <Link to="/about">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">

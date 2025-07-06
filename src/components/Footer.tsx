@@ -1,8 +1,86 @@
 import { MapPin, Phone, Mail, Rocket, Github, Twitter, Linkedin } from "lucide-react";
 
 export const Footer = () => {
+  const partners = [
+    { name: "Xero", logo: "https://cdn.worldvectorlogo.com/logos/xero-2.svg" },
+    { name: "MYOB", logo: "https://cdn.worldvectorlogo.com/logos/myob-1.svg" },
+    { name: "QuickBooks", logo: "https://cdn.worldvectorlogo.com/logos/quickbooks-1.svg" },
+    { name: "IRD", logo: "https://www.ird.govt.nz/-/media/project/ir/home/images/logos/ird-logo-colour.svg" },
+    { name: "NZICA", logo: "https://www.charteredaccountantsanz.com/-/media/caa/images/logos/ca-anz-logo-stacked.svg" },
+    { name: "CPA Australia", logo: "https://cdn.worldvectorlogo.com/logos/cpa-australia.svg" },
+    { name: "ASB Bank", logo: "https://cdn.worldvectorlogo.com/logos/asb-bank.svg" },
+    { name: "ANZ Bank", logo: "https://cdn.worldvectorlogo.com/logos/anz-2.svg" },
+    { name: "Westpac", logo: "https://cdn.worldvectorlogo.com/logos/westpac-1.svg" },
+    { name: "BNZ", logo: "https://cdn.worldvectorlogo.com/logos/bank-of-new-zealand-bnz.svg" }
+  ];
+
   return (
-    <footer className="bg-card border-t border-border">
+    <>
+      {/* Valued Partners Section */}
+      <section className="bg-slate-50 py-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-2">Valued Partners</h2>
+            <p className="text-slate-600">Trusted by industry leaders and integrated with the best platforms</p>
+          </div>
+          
+          {/* Marquee Container */}
+          <div className="relative">
+            <div className="flex animate-marquee space-x-12 items-center">
+              {/* First set of partners */}
+              {partners.map((partner, index) => (
+                <div key={`first-${index}`} className="flex-shrink-0 flex items-center justify-center bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow min-w-[160px] h-20 group">
+                  <img 
+                    src={partner.logo} 
+                    alt={`${partner.name} logo`}
+                    className="max-h-10 max-w-[130px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    onLoad={(e) => {
+                      // Hide fallback text when image loads successfully
+                      const textElement = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (textElement) textElement.style.display = 'none';
+                    }}
+                    onError={(e) => {
+                      // Show fallback text if image fails to load
+                      e.currentTarget.style.display = 'none';
+                      const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (nextElement) nextElement.style.display = 'flex';
+                    }}
+                  />
+                  <div className="text-center flex items-center justify-center w-full h-full">
+                    <div className="text-sm font-semibold text-slate-700">{partner.name}</div>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {partners.map((partner, index) => (
+                <div key={`second-${index}`} className="flex-shrink-0 flex items-center justify-center bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow min-w-[160px] h-20 group">
+                  <img 
+                    src={partner.logo} 
+                    alt={`${partner.name} logo`}
+                    className="max-h-10 max-w-[130px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    onLoad={(e) => {
+                      // Hide fallback text when image loads successfully
+                      const textElement = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (textElement) textElement.style.display = 'none';
+                    }}
+                    onError={(e) => {
+                      // Show fallback text if image fails to load
+                      e.currentTarget.style.display = 'none';
+                      const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (nextElement) nextElement.style.display = 'flex';
+                    }}
+                  />
+                  <div className="text-center flex items-center justify-center w-full h-full">
+                    <div className="text-sm font-semibold text-slate-700">{partner.name}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -132,5 +210,6 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };

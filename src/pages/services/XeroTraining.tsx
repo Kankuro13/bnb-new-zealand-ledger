@@ -2,10 +2,119 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { GraduationCap, CheckCircle, ArrowRight, Users, BookOpen, Monitor, Star } from "lucide-react";
+import { Jumbotron } from "@/components/Jumbotron";
+import { GraduationCap, CheckCircle, ArrowRight, Users, BookOpen, Monitor, Star, Clock, Award, TrendingUp, Phone, Mail, MapPin, HelpCircle, PlusCircle, MinusCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const XeroTrainingPage = () => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const stats = [
+    { number: "500+", label: "People Trained", icon: Users },
+    { number: "95%", label: "Satisfaction Rate", icon: Award },
+    { number: "4.8/5", label: "Average Rating", icon: Star },
+    { number: "24hrs", label: "Support Included", icon: Clock }
+  ];
+
+  const pricingPlans = [
+    {
+      name: "Xero Basics",
+      price: "$120",
+      period: "per hour",
+      features: [
+        "1-on-1 personalized training",
+        "Basic Xero setup",
+        "Invoice and bill creation",
+        "Bank reconciliation basics",
+        "Basic reporting",
+        "Email support for 1 week"
+      ],
+      popular: false
+    },
+    {
+      name: "Xero Mastery",
+      price: "$450",
+      period: "full day",
+      features: [
+        "Group training (up to 6 people)",
+        "Complete Xero setup & configuration",
+        "Advanced features training",
+        "Custom chart of accounts",
+        "Payroll setup included",
+        "3 months email support",
+        "Training materials included"
+      ],
+      popular: true
+    },
+    {
+      name: "Xero Enterprise",
+      price: "$850",
+      period: "2-day course",
+      features: [
+        "Comprehensive enterprise training",
+        "Multi-currency setup",
+        "Advanced reporting & analytics",
+        "Integration with other systems",
+        "Team training (up to 12 people)",
+        "6 months ongoing support",
+        "Certification included"
+      ],
+      popular: false
+    }
+  ];
+
+  const process = [
+    {
+      step: 1,
+      title: "Needs Assessment",
+      description: "We evaluate your business requirements and current Xero knowledge to customize the training program."
+    },
+    {
+      step: 2,
+      title: "Training Plan",
+      description: "Development of a personalized training schedule that fits your team's availability and learning pace."
+    },
+    {
+      step: 3,
+      title: "Hands-on Training",
+      description: "Interactive training sessions using your actual business data for real-world learning experience."
+    },
+    {
+      step: 4,
+      title: "Practice & Review",
+      description: "Guided practice sessions with immediate feedback to ensure confidence in using Xero features."
+    },
+    {
+      step: 5,
+      title: "Ongoing Support",
+      description: "Continued support and guidance to help you maximize Xero's potential for your business."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "Do I need any prior accounting knowledge for Xero training?",
+      answer: "No prior accounting knowledge is required. Our training is designed for users of all skill levels, from complete beginners to experienced bookkeepers looking to transition to Xero."
+    },
+    {
+      question: "Can you train my entire team at once?",
+      answer: "Absolutely! We offer group training sessions for teams of up to 12 people. This is often more cost-effective and ensures everyone learns the same processes and best practices."
+    },
+    {
+      question: "What if I need additional support after training?",
+      answer: "All our training packages include follow-up support. Depending on your package, this ranges from 1 week to 6 months of email support to help you with any questions."
+    },
+    {
+      question: "Can you help migrate our data from our current system to Xero?",
+      answer: "Yes, we provide data migration services as part of our setup process. We can help transfer your customer, supplier, and transaction data from most accounting systems."
+    },
+    {
+      question: "Do you provide training materials?",
+      answer: "Yes, all participants receive comprehensive training materials including step-by-step guides, video tutorials, and quick reference cards to support ongoing learning."
+    }
+  ];
+
   const modules = [
     "Xero Setup and Company File Creation",
     "Chart of Accounts Configuration", 
@@ -46,179 +155,240 @@ export const XeroTrainingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <div className="min-h-screen bg-background pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <GraduationCap className="h-6 w-6 text-accent" />
-              <span className="text-accent font-mono text-sm tracking-wider uppercase">Training Services</span>
-            </div>
-            <h1 className="text-5xl font-bold mb-6">
-              <span className="text-primary">
-                Xero Training
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Master Xero accounting software with comprehensive training programs designed to boost your 
-              team's confidence and efficiency in managing your business finances.
-            </p>
-          </div>
+      
+      {/* Jumbotron */}
+      <Jumbotron
+        title="Xero Training & Certification"
+        subtitle="Master Xero accounting software with comprehensive training programs designed to boost your team's confidence and efficiency in managing your business finances."
+        backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      />
 
-          {/* Training Modules */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">What You'll Learn</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {modules.map((module, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-primary/5 rounded-lg border border-primary/10">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{module}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Training Options */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Training Options</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {trainingOptions.map((option, index) => (
-                <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0">
-                  <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <option.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">{option.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center space-y-4">
-                    <p className="text-muted-foreground">{option.description}</p>
-                    <div className="space-y-2">
-                      <p className="text-sm text-primary font-medium">{option.duration}</p>
-                      <p className="text-lg font-bold text-accent">{option.price}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Why Choose Our Training */}
-          <Card className="gradient-card border-0 mb-16">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">Why Choose Our Xero Training?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  { title: "Certified Trainers", desc: "Xero certified advisors with real-world experience" },
-                  { title: "Hands-On Learning", desc: "Practice with your own data in a safe environment" },
-                  { title: "Ongoing Support", desc: "30 days of follow-up support after training" },
-                  { title: "Customized Content", desc: "Training tailored to your industry and needs" }
-                ].map((benefit, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
-                      {index + 1}
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+      {/* Stats Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg mb-4">
+                    <IconComponent className="h-6 w-6 text-green-600" />
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Prerequisites */}
-          <Card className="gradient-card border-0 mb-16">
-            <CardHeader>
-              <CardTitle className="text-xl">Training Prerequisites</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="font-semibold text-foreground mb-4">What You'll Need:</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Computer with internet access</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Xero subscription (trial available)</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Basic computer skills</span>
-                    </li>
-                  </ul>
+                  <div className="text-3xl font-bold text-slate-900 mb-2">{stat.number}</div>
+                  <div className="text-slate-600">{stat.label}</div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-4">Who Should Attend:</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Business owners</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Office managers</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Bookkeeping staff</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Testimonial */}
-          <Card className="gradient-card border-0 mb-16">
-            <CardContent className="p-8 text-center">
-              <div className="flex justify-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-accent fill-current" />
-                ))}
-              </div>
-              <p className="text-lg text-muted-foreground mb-4 italic">
-                "The Xero training was incredibly valuable. Our team now handles all our bookkeeping in-house with confidence. The trainer was patient and knowledgeable."
-              </p>
-              <div>
-                <p className="font-semibold text-foreground">Lisa Roberts</p>
-                <p className="text-sm text-muted-foreground">Roberts Property Management</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* CTA */}
-          <div className="text-center">
-            <div className="bg-primary/10 rounded-3xl p-12 border border-primary/20">
-              <h2 className="text-3xl font-bold mb-6">
-                <span className="text-primary">
-                  Ready to Master Xero?
-                </span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Invest in your team's skills and take control of your business finances. 
-                Book your Xero training session today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold">
-                    Book Training Session
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/services">
-                  <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-full text-lg">
-                    View All Services
-                  </Button>
-                </Link>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
+      </section>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Training Modules */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">What You'll Learn</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Comprehensive Xero training covering all essential features for effective business accounting.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {modules.map((module, index) => (
+              <div key={index} className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg border border-green-200">
+                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                <span className="text-slate-700 font-medium">{module}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Training Options */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Training Options</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Choose the training format that best suits your schedule and learning preferences.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {trainingOptions.map((option, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-slate-200">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <option.icon className="h-8 w-8 text-green-600" />
+                  </div>
+                  <CardTitle className="text-xl">{option.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center space-y-4">
+                  <p className="text-slate-600">{option.description}</p>
+                  <div className="space-y-2">
+                    <p className="text-sm text-green-600 font-medium">{option.duration}</p>
+                    <p className="text-lg font-bold text-slate-900">{option.price}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Training Packages</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Comprehensive training packages designed for different skill levels and business needs.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pricingPlans.map((plan, index) => (
+              <Card key={index} className={`relative ${plan.popular ? 'border-green-500 shadow-lg scale-105' : 'border-slate-200'}`}>
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <CardHeader className="text-center">
+                  <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-3xl font-bold text-green-600">{plan.price}</span>
+                    <span className="text-slate-600">/{plan.period}</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 mb-6">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <span className="text-sm text-slate-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className={`w-full ${plan.popular ? 'bg-green-600 hover:bg-green-700' : ''}`}>
+                    Get Started
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our Training Process</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Our structured 5-step approach ensures effective learning and practical application.
+            </p>
+          </div>
+          
+          <div className="space-y-8">
+            {process.map((step, index) => (
+              <div key={index} className="flex items-start space-x-6">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full font-bold">
+                    {step.step}
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                  <p className="text-slate-600">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Common questions about our Xero training programs.
+            </p>
+          </div>
+          
+          <div className="space-y-4 max-w-3xl mx-auto">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="border border-slate-200">
+                <CardHeader 
+                  className="cursor-pointer hover:bg-slate-50 transition-colors"
+                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                >
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-lg font-medium">{faq.question}</CardTitle>
+                    {openFAQ === index ? (
+                      <MinusCircle className="h-5 w-5 text-slate-400" />
+                    ) : (
+                      <PlusCircle className="h-5 w-5 text-slate-400" />
+                    )}
+                  </div>
+                </CardHeader>
+                {openFAQ === index && (
+                  <CardContent>
+                    <p className="text-slate-600">{faq.answer}</p>
+                  </CardContent>
+                )}
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Testimonial Section */}
+        <section className="mb-16 bg-slate-50 rounded-2xl p-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex justify-center mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+              ))}
+            </div>
+            <blockquote className="text-xl text-slate-700 italic mb-6">
+              "The Xero training was incredibly valuable. Our team now handles all our bookkeeping in-house with confidence. The trainer was patient and knowledgeable, and the ongoing support has been fantastic."
+            </blockquote>
+            <div className="font-semibold text-slate-900">Lisa Roberts</div>
+            <div className="text-slate-600">Roberts Property Management</div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="bg-green-600 text-white rounded-2xl p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Ready to Master Xero?</h2>
+              <p className="text-green-100 mb-6">
+                Invest in your team's skills and take control of your business finances. 
+                Book your customized Xero training session today and transform how you manage your accounts.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5 text-green-200" />
+                  <span>+64 9 123 4567</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-5 w-5 text-green-200" />
+                  <span>training@nzaccountants.co.nz</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin className="h-5 w-5 text-green-200" />
+                  <span>On-site & Online Training Available</span>
+                </div>
+              </div>
+            </div>
+            <div className="text-center lg:text-right">
+              <Button size="lg" variant="secondary" className="mb-4">
+                Book Training Session
+              </Button>
+              <p className="text-green-100 text-sm">
+                Free consultation • Custom training plan • Ongoing support
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
+      
       <Footer />
     </div>
   );

@@ -87,7 +87,7 @@ export const ServicesPage = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mb-16">
           {services.map((service, index) => (
             <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 overflow-hidden h-full flex flex-col">
               <CardHeader className="relative">
@@ -103,13 +103,15 @@ export const ServicesPage = () => {
                 <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors mb-6 flex-grow">
                   {service.description}
                 </p>
-                <Link 
-                  to={service.link} 
-                  className="mt-auto text-primary hover:text-primary/80 font-medium inline-flex items-center transition-colors"
-                >
-                  View Details
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <div className="text-center sm:text-left">
+                  <Link 
+                    to={service.link} 
+                    className="mt-auto text-primary hover:text-primary/80 font-medium inline-flex items-center transition-colors"
+                  >
+                    View Details
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           ))}

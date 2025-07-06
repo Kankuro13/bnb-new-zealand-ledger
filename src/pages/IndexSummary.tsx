@@ -195,7 +195,7 @@ export const IndexSummary = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 mb-12">
             {[
               { icon: Users, title: "Payroll Management", desc: "Accurate payroll processing and KiwiSaver compliance", link: "/services/payroll-management" },
               { icon: FileText, title: "Accounts Receivable", desc: "Invoice management and payment follow-up", link: "/services/accounts-receivable" },
@@ -208,13 +208,13 @@ export const IndexSummary = () => {
               { icon: GraduationCap, title: "Xero Training", desc: "Comprehensive Xero system training", link: "/services/xero-training" }
             ].map((service, index) => (
               <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 h-full">
-                <CardContent className="p-6 text-center flex flex-col h-full">
+                <CardContent className="p-4 sm:p-6 text-center flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2 text-sm">{service.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-grow">{service.desc}</p>
-                  <div className="mt-auto flex justify-end">
+                  <p className="hidden sm:block text-xs text-muted-foreground leading-relaxed mb-4 flex-grow">{service.desc}</p>
+                  <div className="mt-auto flex justify-center sm:justify-end">
                     <Link 
                       to={service.link} 
                       className="text-primary hover:text-primary/80 font-medium text-xs inline-flex items-center transition-colors"
@@ -254,11 +254,12 @@ export const IndexSummary = () => {
                 accounting services tailored to the needs of small businesses across New Zealand. 
                 Our experienced team is dedicated to helping you stay compliant, organized, and focused on growing your business.
               </p>
-              <Link to="/about">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                  Learn More About Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+              <Link 
+                to="/about" 
+                className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+              >
+                Learn More About Us
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
             <div className="relative">
@@ -287,7 +288,7 @@ export const IndexSummary = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-12">
             {[
               { name: "Sarah Chen", role: "Senior Accountant", image: "https://images.unsplash.com/photo-1494790108755-2616c898834c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" },
               { name: "Marcus Rodriguez", role: "Payroll Specialist", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" },
@@ -295,7 +296,7 @@ export const IndexSummary = () => {
               { name: "David Kim", role: "Compliance Manager", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" }
             ].map((member, index) => (
               <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 border-0 text-center">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <img 
                     src={member.image}
                     alt={member.name}
@@ -333,7 +334,7 @@ export const IndexSummary = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 mb-12">
             {[
               { icon: Building, title: "Construction", desc: "Project accounting and compliance" },
               { icon: Users, title: "Professional Services", desc: "Consultancy and advisory firms" },
@@ -348,7 +349,7 @@ export const IndexSummary = () => {
                     <industry.icon className="h-6 w-6 text-white" />
                   </div>
                   <h4 className="font-semibold text-foreground text-sm mb-1">{industry.title}</h4>
-                  <p className="text-xs text-muted-foreground">{industry.desc}</p>
+                  <p className="hidden sm:block text-xs text-muted-foreground">{industry.desc}</p>
                 </CardContent>
               </Card>
             ))}

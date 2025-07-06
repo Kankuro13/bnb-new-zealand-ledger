@@ -55,7 +55,7 @@ export const XeroTrainingPage = () => {
               <span className="text-accent font-mono text-sm tracking-wider uppercase">Training Services</span>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Xero Training
               </span>
             </h1>
@@ -70,7 +70,7 @@ export const XeroTrainingPage = () => {
             <h2 className="text-3xl font-bold text-center mb-12">What You'll Learn</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {modules.map((module, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg border border-primary/10">
+                <div key={index} className="flex items-center space-x-3 p-4 bg-primary/5 rounded-lg border border-primary/10">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                   <span className="text-foreground font-medium">{module}</span>
                 </div>
@@ -85,7 +85,7 @@ export const XeroTrainingPage = () => {
               {trainingOptions.map((option, index) => (
                 <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0">
                   <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                       <option.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-xl">{option.title}</CardTitle>
@@ -116,7 +116,7 @@ export const XeroTrainingPage = () => {
                   { title: "Customized Content", desc: "Training tailored to your industry and needs" }
                 ].map((benefit, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                       {index + 1}
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
@@ -192,9 +192,9 @@ export const XeroTrainingPage = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl p-12 border border-primary/20">
+            <div className="bg-primary/10 rounded-3xl p-12 border border-primary/20">
               <h2 className="text-3xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="text-primary">
                   Ready to Master Xero?
                 </span>
               </h2>
@@ -204,7 +204,7 @@ export const XeroTrainingPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-4 rounded-full text-lg font-semibold">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold">
                     Book Training Session
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>

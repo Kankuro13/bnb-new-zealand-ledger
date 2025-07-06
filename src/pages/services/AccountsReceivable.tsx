@@ -29,7 +29,7 @@ export const AccountsReceivablePage = () => {
               <span className="text-accent font-mono text-sm tracking-wider uppercase">AR Services</span>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Accounts Receivable
               </span>
             </h1>
@@ -64,9 +64,9 @@ export const AccountsReceivablePage = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl p-12 border border-primary/20">
+            <div className="bg-primary/10 rounded-3xl p-12 border border-primary/20">
               <h2 className="text-3xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="text-primary">
                   Improve Your Cash Flow Today
                 </span>
               </h2>
@@ -74,7 +74,7 @@ export const AccountsReceivablePage = () => {
                 Let us help you collect payments faster and maintain healthy customer relationships.
               </p>
               <Link to="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-4 rounded-full text-lg font-semibold">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold">
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

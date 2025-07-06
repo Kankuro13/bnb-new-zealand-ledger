@@ -101,7 +101,7 @@ export const ResourcesPage = () => {
               <span className="text-accent font-mono text-sm tracking-wider uppercase">Free Resources</span>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Downloadable Resources
               </span>
             </h1>

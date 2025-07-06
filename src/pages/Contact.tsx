@@ -12,25 +12,25 @@ export const ContactPage = () => {
       icon: MapPin,
       title: "Visit Our Office",
       details: ["123 Queen Street", "Auckland 1010", "New Zealand"],
-      gradient: "from-amber-600 to-yellow-600"
+      color: "bg-amber-600"
     },
     {
       icon: Phone,
       title: "Call Us",
       details: ["+64 9 123 4567", "+64 21 987 6543", "Monday - Friday: 8:30 AM - 5:30 PM"],
-      gradient: "from-orange-600 to-amber-600"
+      color: "bg-orange-600"
     },
     {
       icon: Mail,
       title: "Email Us",
       details: ["info@bnbaccounting.co.nz", "support@bnbaccounting.co.nz", "We respond within 2 hours"],
-      gradient: "from-yellow-600 to-orange-600"
+      color: "bg-yellow-600"
     },
     {
       icon: Clock,
       title: "Business Hours",
       details: ["Monday - Friday: 8:30 AM - 5:30 PM", "Saturday: 9:00 AM - 1:00 PM", "Sunday: Closed"],
-      gradient: "from-amber-700 to-orange-600"
+      color: "bg-amber-700"
     }
   ];
 
@@ -45,7 +45,7 @@ export const ContactPage = () => {
             <span className="text-accent font-mono text-sm tracking-wider uppercase">Get In Touch</span>
           </div>
           <h1 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Contact Us Today
             </span>
           </h1>
@@ -107,7 +107,7 @@ export const ContactPage = () => {
                   className="bg-background/50"
                 />
               </div>
-              <Button className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white py-3 text-lg font-semibold">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3 text-lg font-semibold">
                 Send Message
               </Button>
             </CardContent>
@@ -119,7 +119,7 @@ export const ContactPage = () => {
               <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${info.gradient} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-12 h-12 ${info.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
                       <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -163,7 +163,7 @@ export const ContactPage = () => {
         {/* FAQ Section */}
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Frequently Asked Questions
             </span>
           </h2>

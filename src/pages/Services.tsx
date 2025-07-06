@@ -11,63 +11,63 @@ export const ServicesPage = () => {
       icon: Users,
       title: "Payroll Management",
       description: "Accurate payroll processing, payslip preparation, leave management, and KiwiSaver compliance, ensuring your employees are paid correctly and on time.",
-      gradient: "from-amber-600 to-yellow-600",
+      color: "bg-blue-600",
       link: "/services/payroll-management"
     },
     {
       icon: FileText,
       title: "Accounts Receivable (AR)",
       description: "We manage your invoicing, follow up on outstanding payments, and help maintain a healthy cash flow for your business.",
-      gradient: "from-orange-600 to-amber-600",
+      color: "bg-green-600",
       link: "/services/accounts-receivable"
     },
     {
       icon: CreditCard,
       title: "Accounts Payable (AP)",
       description: "Efficient handling of supplier invoices, payments, and expense tracking to keep your accounts up to date.",
-      gradient: "from-yellow-600 to-orange-600",
+      color: "bg-purple-600",
       link: "/services/accounts-payable"
     },
     {
       icon: DollarSign,
       title: "Credit Control",
       description: "Proactive monitoring and management of your customer debts to reduce overdue accounts and improve cash collection.",
-      gradient: "from-amber-700 to-orange-600",
+      color: "bg-red-600",
       link: "/services/credit-control"
     },
     {
       icon: TrendingUp,
       title: "Payroll Data Entry",
       description: "Fast and accurate data entry of payroll information to ensure smooth payroll runs and easy reporting.",
-      gradient: "from-orange-700 to-amber-700",
+      color: "bg-indigo-600",
       link: "/services/payroll-data-entry"
     },
     {
       icon: Building,
       title: "GST Filing & Compliance",
       description: "Preparation and filing of Goods and Services Tax (GST) returns with IRD, so you never miss a deadline.",
-      gradient: "from-yellow-700 to-orange-700",
+      color: "bg-orange-600",
       link: "/services/gst-filing"
     },
     {
       icon: Zap,
       title: "PAYE Services",
       description: "We calculate and manage your Pay As You Earn (PAYE) obligations, ensuring correct deductions and timely payments to IRD.",
-      gradient: "from-amber-600 to-yellow-700",
+      color: "bg-yellow-600",
       link: "/services/paye-services"
     },
     {
       icon: BookOpen,
       title: "Income Tax Returns",
       description: "Preparation and filing of annual income tax returns for sole traders, partnerships, and companies, maximizing your tax efficiency and compliance.",
-      gradient: "from-orange-600 to-amber-600",
+      color: "bg-teal-600",
       link: "/services/income-tax-returns"
     },
     {
       icon: GraduationCap,
       title: "Xero Accounting System Training",
       description: "Hands-on training to help you and your team confidently use Xero for everyday bookkeeping, invoicing, payroll, GST returns, and reporting.",
-      gradient: "from-yellow-600 to-amber-600",
+      color: "bg-pink-600",
       link: "/services/xero-training"
     }
   ];
@@ -83,7 +83,7 @@ export const ServicesPage = () => {
             <span className="text-accent font-mono text-sm tracking-wider uppercase">Our Services</span>
           </div>
           <h1 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Our Services
             </span>
           </h1>
@@ -97,10 +97,10 @@ export const ServicesPage = () => {
           {services.map((service, index) => (
             <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 overflow-hidden h-full flex flex-col">
               <CardHeader className="relative">
-                <div className={`w-14 h-14 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
+                <div className={`w-14 h-14 ${service.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
-                <div className={`absolute -top-2 -right-2 w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-full opacity-10 group-hover:scale-150 transition-transform duration-500`} />
+                <div className={`absolute -top-2 -right-2 w-20 h-20 ${service.color} rounded-full opacity-10 group-hover:scale-150 transition-transform duration-500`} />
                 <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
                   {service.title}
                 </CardTitle>
@@ -121,7 +121,7 @@ export const ServicesPage = () => {
         </div>
 
         <div className="text-center">
-          <div className="inline-flex items-center space-x-4 px-8 py-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full border border-primary/20">
+          <div className="inline-flex items-center space-x-4 px-8 py-4 bg-primary/10 rounded-full border border-primary/20">
             <Sparkles className="h-5 w-5 text-primary animate-pulse" />
             <span className="text-primary font-semibold">Professional Excellence Since 2010</span>
             <Sparkles className="h-5 w-5 text-accent animate-pulse" />

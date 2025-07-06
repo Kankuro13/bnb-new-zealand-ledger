@@ -2,17 +2,17 @@ import { MapPin, Phone, Mail, Rocket, Github, Twitter, Linkedin } from "lucide-r
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-background to-card border-t border-border">
+    <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
                 <Rocket className="h-7 w-7 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <h3 className="text-2xl font-bold text-primary">
                   B&B Tax
                 </h3>
                 <p className="text-xs text-muted-foreground font-mono">NEXT-GEN ACCOUNTING</p>
@@ -26,7 +26,7 @@ export const Footer = () => {
             
             <div className="space-y-3">
               <div className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                   <MapPin className="h-4 w-4 text-white" />
                 </div>
                 <span className="text-muted-foreground group-hover:text-foreground transition-colors">
@@ -34,7 +34,7 @@ export const Footer = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Phone className="h-4 w-4 text-white" />
                 </div>
                 <span className="text-muted-foreground group-hover:text-foreground transition-colors">
@@ -42,7 +42,7 @@ export const Footer = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="h-4 w-4 text-white" />
                 </div>
                 <span className="text-muted-foreground group-hover:text-foreground transition-colors">
@@ -107,13 +107,13 @@ export const Footer = () => {
             <div className="flex items-center space-x-6">
               <div className="flex space-x-4">
                 {[
-                  { icon: Github, gradient: 'from-gray-600 to-gray-800' },
-                  { icon: Twitter, gradient: 'from-blue-400 to-blue-600' },
-                  { icon: Linkedin, gradient: 'from-blue-600 to-blue-800' }
+                  { icon: Github, color: 'bg-gray-700' },
+                  { icon: Twitter, color: 'bg-blue-600' },
+                  { icon: Linkedin, color: 'bg-blue-700' }
                 ].map((social, index) => (
                   <div 
                     key={index}
-                    className={`w-10 h-10 bg-gradient-to-br ${social.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}
+                    className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}
                   >
                     <social.icon className="h-5 w-5 text-white" />
                   </div>

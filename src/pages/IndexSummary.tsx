@@ -181,12 +181,12 @@ export const IndexSummary = () => {
 
       {/* Services Summary */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+        <div className="absolute inset-0 bg-background/20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Our Services
               </span>
             </h2>
@@ -209,7 +209,7 @@ export const IndexSummary = () => {
             ].map((service, index) => (
               <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 h-full">
                 <CardContent className="p-6 text-center flex flex-col h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2 text-sm">{service.title}</h3>
@@ -227,7 +227,7 @@ export const IndexSummary = () => {
 
           <div className="text-center">
             <Link to="/services">
-              <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-3 rounded-full font-semibold">
+              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold">
                 View All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -237,12 +237,12 @@ export const IndexSummary = () => {
       </section>
 
       {/* About Summary */}
-      <section className="py-20 bg-gradient-to-r from-card to-secondary">
+      <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="text-primary">
                   About B&B Tax
                 </span>
               </h2>
@@ -274,7 +274,7 @@ export const IndexSummary = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Our Professional Team
               </span>
             </h2>
@@ -307,7 +307,7 @@ export const IndexSummary = () => {
 
           <div className="text-center">
             <Link to="/team">
-              <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-3 rounded-full font-semibold">
+              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold">
                 Meet Our Team
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -317,11 +317,11 @@ export const IndexSummary = () => {
       </section>
 
       {/* Industries Summary */}
-      <section className="py-20 bg-gradient-to-r from-card to-secondary">
+      <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Industries We Serve
               </span>
             </h2>
@@ -341,7 +341,7 @@ export const IndexSummary = () => {
             ].map((industry, index) => (
               <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 text-center">
                 <CardContent className="p-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                     <industry.icon className="h-6 w-6 text-white" />
                   </div>
                   <h4 className="font-semibold text-foreground text-sm mb-1">{industry.title}</h4>
@@ -363,11 +363,11 @@ export const IndexSummary = () => {
       </section>
 
       {/* Testimonials Summary */}
-      <section className="py-20 bg-gradient-to-r from-card to-secondary">
+      <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Client Testimonials
               </span>
             </h2>
@@ -412,10 +412,10 @@ export const IndexSummary = () => {
       {/* Contact CTA */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl p-12 border border-primary/20">
+          <div className="bg-primary/10 rounded-3xl p-12 border border-primary/20">
             <MessageSquare className="h-16 w-16 text-primary mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Ready to Get Started?
               </span>
             </h2>
@@ -425,7 +425,7 @@ export const IndexSummary = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-4 rounded-full text-lg font-semibold">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold">
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

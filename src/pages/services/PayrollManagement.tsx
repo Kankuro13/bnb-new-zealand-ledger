@@ -36,7 +36,7 @@ export const PayrollManagementPage = () => {
               <span className="text-accent font-mono text-sm tracking-wider uppercase">Payroll Services</span>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Payroll Management
               </span>
             </h1>
@@ -66,7 +66,7 @@ export const PayrollManagementPage = () => {
               <div className="space-y-6">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -93,7 +93,7 @@ export const PayrollManagementPage = () => {
                   { step: "4", title: "Distribution", desc: "Deliver payslips and process payments" }
                 ].map((process, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                       {process.step}
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">{process.title}</h3>
@@ -124,9 +124,9 @@ export const PayrollManagementPage = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl p-12 border border-primary/20">
+            <div className="bg-primary/10 rounded-3xl p-12 border border-primary/20">
               <h2 className="text-3xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="text-primary">
                   Ready to Streamline Your Payroll?
                 </span>
               </h2>
@@ -136,7 +136,7 @@ export const PayrollManagementPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-4 rounded-full text-lg font-semibold">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold">
                     Get Free Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>

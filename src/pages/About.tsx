@@ -74,7 +74,7 @@ export const AboutPage = () => {
                 className="rounded-3xl shadow-2xl"
               />
             </div>
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl -z-10" />
+            <div className="absolute -inset-4 bg-primary/20 rounded-3xl -z-10" />
           </div>
         </div>
 

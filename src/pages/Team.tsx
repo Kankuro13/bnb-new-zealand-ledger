@@ -12,7 +12,7 @@ export const TeamPage = () => {
       qualifications: "CA, CPA, Tax Specialist",
       experience: "15+ years",
       specialty: "Tax Planning & Compliance",
-      gradient: "from-amber-600 to-yellow-600"
+      color: "bg-amber-600"
     },
     {
       name: "Marcus Rodriguez",
@@ -21,7 +21,7 @@ export const TeamPage = () => {
       qualifications: "BComm, Payroll Specialist",
       experience: "12+ years",
       specialty: "Payroll Management & KiwiSaver",
-      gradient: "from-orange-600 to-amber-600"
+      color: "bg-orange-600"
     },
     {
       name: "Emma Thompson",
@@ -30,7 +30,7 @@ export const TeamPage = () => {
       qualifications: "BComm, Xero Certified Advisor",
       experience: "10+ years",
       specialty: "Business Systems & Training",
-      gradient: "from-yellow-600 to-orange-600"
+      color: "bg-yellow-600"
     },
     {
       name: "David Kim",
@@ -39,7 +39,7 @@ export const TeamPage = () => {
       qualifications: "CA, Bookkeeping Specialist",
       experience: "14+ years",
       specialty: "GST, PAYE & Compliance",
-      gradient: "from-amber-700 to-orange-600"
+      color: "bg-amber-700"
     }
   ];
 
@@ -54,7 +54,7 @@ export const TeamPage = () => {
             <span className="text-accent font-mono text-sm tracking-wider uppercase">Our Team</span>
           </div>
           <h1 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Professional Experts
             </span>
           </h1>
@@ -74,12 +74,12 @@ export const TeamPage = () => {
                     alt={member.name}
                     className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-xl group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-2xl -z-10 opacity-30 group-hover:opacity-50 transition-opacity blur-sm`} />
+                  <div className={`absolute -inset-2 ${member.color} rounded-2xl -z-10 opacity-30 group-hover:opacity-50 transition-opacity blur-sm`} />
                 </div>
                 <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
-                <p className={`bg-gradient-to-r ${member.gradient} bg-clip-text text-transparent font-semibold`}>
+                <p className="text-primary font-semibold">
                   {member.role}
                 </p>
               </CardHeader>
@@ -96,13 +96,13 @@ export const TeamPage = () => {
                   </p>
                 </div>
                 <div className="flex justify-center space-x-4 pt-4">
-                  <div className={`w-8 h-8 bg-gradient-to-br ${member.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
+                  <div className={`w-8 h-8 ${member.color} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
                     <Mail className="h-4 w-4 text-white" />
                   </div>
-                  <div className={`w-8 h-8 bg-gradient-to-br ${member.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
+                  <div className={`w-8 h-8 ${member.color} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
                     <Phone className="h-4 w-4 text-white" />
                   </div>
-                  <div className={`w-8 h-8 bg-gradient-to-br ${member.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
+                  <div className={`w-8 h-8 ${member.color} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
                     <Linkedin className="h-4 w-4 text-white" />
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export const TeamPage = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-card to-secondary rounded-3xl p-12 text-center">
+        <div className="bg-secondary rounded-3xl p-12 text-center">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Join Our Professional Team</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             We're always looking for qualified accounting professionals to join our growing team. 

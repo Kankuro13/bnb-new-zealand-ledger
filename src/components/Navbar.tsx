@@ -23,11 +23,11 @@ export const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center animate-glow">
+              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center animate-glow">
                 <Zap className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold text-primary">
                   B&B Tax
                 </h1>
                 <p className="text-xs text-muted-foreground font-mono">ACCOUNTING.NZ</p>
@@ -44,7 +44,7 @@ export const Navbar = () => {
                 className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-secondary/50 rounded-lg relative group"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-3/4 group-hover:-translate-x-1/2 transition-all duration-300 rounded-full" />
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary group-hover:w-3/4 group-hover:-translate-x-1/2 transition-all duration-300 rounded-full" />
               </a>
             ))}
             <Button className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-full">

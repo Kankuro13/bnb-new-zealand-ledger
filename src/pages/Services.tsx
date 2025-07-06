@@ -87,7 +87,7 @@ export const ServicesPage = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mb-16">
           {services.map((service, index) => (
             <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 overflow-hidden h-full flex flex-col">
               <CardHeader className="relative">

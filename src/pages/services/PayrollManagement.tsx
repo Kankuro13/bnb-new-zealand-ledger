@@ -102,7 +102,7 @@ export const PayrollManagementPage = () => {
         <div className="mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-white to-gray-50">
+              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow border border-slate-200 bg-white">
                 <CardContent className="p-0">
                   <stat.icon className={`h-8 w-8 mx-auto mb-4 ${stat.color}`} />
                   <div className={`text-3xl font-bold mb-2 ${stat.color}`}>{stat.number}</div>
@@ -117,8 +117,8 @@ export const PayrollManagementPage = () => {
           {/* Service Details */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <CheckCircle className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <CheckCircle className="h-6 w-6 text-blue-600" />
               </div>
               <h2 className="text-3xl font-bold">What's Included</h2>
             </div>
@@ -135,14 +135,14 @@ export const PayrollManagementPage = () => {
           {/* Benefits */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                 <Star className="h-6 w-6 text-white" />
               </div>
               <h2 className="text-3xl font-bold">Why Choose Us</h2>
             </div>
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-4 p-4 rounded-xl hover:shadow-md transition-shadow bg-gradient-to-r from-white to-gray-50">
+                <div key={index} className="flex items-start space-x-4 p-4 rounded-xl hover:shadow-md transition-shadow bg-white border border-slate-200">
                   <div className={`w-12 h-12 ${benefit.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
                     <benefit.icon className="h-6 w-6 text-white" />
                   </div>
@@ -159,10 +159,8 @@ export const PayrollManagementPage = () => {
         {/* Pricing Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                Transparent Pricing
-              </span>
+            <h2 className="text-4xl font-bold mb-4 text-slate-900">
+              Transparent Pricing
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose the plan that fits your business size and needs
@@ -174,7 +172,7 @@ export const PayrollManagementPage = () => {
               <Card key={index} className={`relative ${plan.color} border-2 hover:shadow-xl transition-all duration-300 ${plan.popular ? 'scale-105' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">
+                    <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">
                       Most Popular
                     </span>
                   </div>
@@ -194,7 +192,7 @@ export const PayrollManagementPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className={`w-full mt-6 ${plan.popular ? 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700' : ''}`}>
+                  <Button className={`w-full mt-6 ${plan.popular ? 'bg-green-600 hover:bg-green-700' : ''}`}>
                     Get Started
                   </Button>
                 </CardContent>
@@ -204,8 +202,8 @@ export const PayrollManagementPage = () => {
         </div>
 
         {/* Process */}
-        <Card className="mb-20 overflow-hidden border-0 shadow-xl bg-gradient-to-br from-blue-50 to-green-50">
-          <CardHeader className="bg-gradient-to-r from-blue-500 to-green-500 text-white">
+        <Card className="mb-20 overflow-hidden border-0 shadow-xl bg-slate-50">
+          <CardHeader className="bg-blue-600 text-white">
             <CardTitle className="text-3xl text-center">Our Payroll Process</CardTitle>
             <p className="text-center text-blue-100 mt-2">Streamlined, secure, and accurate every time</p>
           </CardHeader>
@@ -233,10 +231,8 @@ export const PayrollManagementPage = () => {
         {/* FAQ Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Frequently Asked Questions
-              </span>
+            <h2 className="text-4xl font-bold mb-4 text-slate-900">
+              Frequently Asked Questions
             </h2>
             <p className="text-xl text-muted-foreground">Get answers to common payroll questions</p>
           </div>
@@ -259,7 +255,7 @@ export const PayrollManagementPage = () => {
         </div>
 
         {/* Testimonial */}
-        <Card className="mb-20 border-0 shadow-xl bg-gradient-to-br from-yellow-50 to-orange-50">
+        <Card className="mb-20 border-0 shadow-xl bg-yellow-50">
           <CardContent className="p-12 text-center">
             <div className="flex justify-center mb-6">
               {[...Array(5)].map((_, i) => (
@@ -285,7 +281,7 @@ export const PayrollManagementPage = () => {
         </Card>
 
         {/* Contact Section */}
-        <Card className="mb-20 border-0 shadow-xl bg-gradient-to-r from-blue-500 to-green-500 text-white">
+        <Card className="mb-20 border-0 shadow-xl bg-blue-600 text-white">
           <CardContent className="p-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
@@ -319,11 +315,7 @@ export const PayrollManagementPage = () => {
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
-                    <Link to="/services">
-                      <Button variant="outline" size="lg" className="w-full border-white text-white hover:bg-white/10 py-4">
-                        View All Services
-                      </Button>
-                    </Link>
+                   
                   </div>
                   <p className="text-sm text-blue-100 mt-4">
                     No setup fees • Cancel anytime • 30-day money-back guarantee

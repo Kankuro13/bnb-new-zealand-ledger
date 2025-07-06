@@ -9,6 +9,7 @@ export const Navbar = () => {
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Industries", href: "/industries" },
     { name: "About", href: "/about" },
     { name: "Team", href: "/team" },
     { name: "Testimonials", href: "/testimonials" },

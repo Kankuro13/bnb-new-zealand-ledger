@@ -10,6 +10,11 @@ import { TeamPage } from "./pages/Team";
 import { TestimonialsPage } from "./pages/Testimonials";
 import { ResourcesPage } from "./pages/Resources";
 import { ContactPage } from "./pages/Contact";
+import { IndustriesPage } from "./pages/Industries";
+import { PayrollManagementPage } from "./pages/services/PayrollManagement";
+import { GSTFilingPage } from "./pages/services/GSTFiling";
+import { XeroTrainingPage } from "./pages/services/XeroTraining";
+import { AccountsReceivablePage } from "./pages/services/AccountsReceivable";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +28,16 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/payroll-management" element={<PayrollManagementPage />} />
+          <Route path="/services/accounts-receivable" element={<AccountsReceivablePage />} />
+          <Route path="/services/accounts-payable" element={<AccountsReceivablePage />} />
+          <Route path="/services/credit-control" element={<AccountsReceivablePage />} />
+          <Route path="/services/payroll-data-entry" element={<PayrollManagementPage />} />
+          <Route path="/services/gst-filing" element={<GSTFilingPage />} />
+          <Route path="/services/paye-services" element={<GSTFilingPage />} />
+          <Route path="/services/income-tax-returns" element={<GSTFilingPage />} />
+          <Route path="/services/xero-training" element={<XeroTrainingPage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />

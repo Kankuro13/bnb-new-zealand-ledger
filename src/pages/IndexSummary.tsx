@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowRight, CheckCircle, Sparkles, TrendingUp, Users, FileText, DollarSign, Star, MessageSquare, Zap, Calculator, Shield, BookOpen } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, TrendingUp, Users, FileText, DollarSign, Star, MessageSquare, Zap, Calculator, Shield, BookOpen, CreditCard, Building, GraduationCap, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { UseEmblaCarouselType } from "embla-carousel-react";
@@ -195,23 +195,29 @@ export const IndexSummary = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-12">
             {[
-              { icon: Users, title: "Payroll Management", desc: "Accurate payroll processing, payslip preparation, leave management, and KiwiSaver compliance" },
-              { icon: FileText, title: "GST & PAYE Services", desc: "GST filing, PAYE calculations, and IRD compliance management" },
-              { icon: DollarSign, title: "Accounts Management", desc: "Accounts receivable, accounts payable, and credit control services" }
+              { icon: Users, title: "Payroll Management", desc: "Accurate payroll processing and KiwiSaver compliance", link: "/services/payroll-management" },
+              { icon: FileText, title: "Accounts Receivable", desc: "Invoice management and payment follow-up", link: "/services/accounts-receivable" },
+              { icon: CreditCard, title: "Accounts Payable", desc: "Supplier invoice and payment management", link: "/services/accounts-payable" },
+              { icon: DollarSign, title: "Credit Control", desc: "Debt monitoring and cash collection", link: "/services/credit-control" },
+              { icon: TrendingUp, title: "Payroll Data Entry", desc: "Fast and accurate payroll data processing", link: "/services/payroll-data-entry" },
+              { icon: Building, title: "GST Filing", desc: "GST returns and IRD compliance", link: "/services/gst-filing" },
+              { icon: Zap, title: "PAYE Services", desc: "PAYE calculations and IRD payments", link: "/services/paye-services" },
+              { icon: BookOpen, title: "Income Tax Returns", desc: "Tax return preparation and filing", link: "/services/income-tax-returns" },
+              { icon: GraduationCap, title: "Xero Training", desc: "Comprehensive Xero system training", link: "/services/xero-training" }
             ].map((service, index) => (
-              <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-muted-foreground">{service.desc}</p>
-                </CardContent>
-              </Card>
+              <Link key={index} to={service.link}>
+                <Card className="gradient-card hover:scale-105 transition-all duration-300 group border-0 h-full cursor-pointer">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <service.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2 text-sm">{service.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{service.desc}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 
@@ -299,6 +305,52 @@ export const IndexSummary = () => {
             <Link to="/team">
               <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-3 rounded-full font-semibold">
                 Meet Our Team
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Summary */}
+      <section className="py-20 bg-gradient-to-r from-card to-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Industries We Serve
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Specialized accounting solutions across diverse industry sectors in New Zealand
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
+            {[
+              { icon: Building, title: "Construction", desc: "Project accounting and compliance" },
+              { icon: Users, title: "Professional Services", desc: "Consultancy and advisory firms" },
+              { icon: Zap, title: "Technology", desc: "Startups and tech companies" },
+              { icon: DollarSign, title: "Retail", desc: "Point of sale and inventory management" },
+              { icon: FileText, title: "Healthcare", desc: "Medical practice accounting" },
+              { icon: TrendingUp, title: "Manufacturing", desc: "Cost accounting and operations" }
+            ].map((industry, index) => (
+              <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 text-center">
+                <CardContent className="p-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                    <industry.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-foreground text-sm mb-1">{industry.title}</h4>
+                  <p className="text-xs text-muted-foreground">{industry.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/industries">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                View All Industries
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

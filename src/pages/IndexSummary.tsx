@@ -207,17 +207,21 @@ export const IndexSummary = () => {
               { icon: BookOpen, title: "Income Tax Returns", desc: "Tax return preparation and filing", link: "/services/income-tax-returns" },
               { icon: GraduationCap, title: "Xero Training", desc: "Comprehensive Xero system training", link: "/services/xero-training" }
             ].map((service, index) => (
-              <Link key={index} to={service.link}>
-                <Card className="gradient-card hover:scale-105 transition-all duration-300 group border-0 h-full cursor-pointer">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <service.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-2 text-sm">{service.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{service.desc}</p>
-                  </CardContent>
-                </Card>
-              </Link>
+              <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 h-full">
+                <CardContent className="p-6 text-center flex flex-col h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <service.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2 text-sm">{service.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-grow">{service.desc}</p>
+                  <Link to={service.link} className="mt-auto">
+                    <Button variant="outline" size="sm" className="w-full text-xs border-primary/30 text-primary hover:bg-primary/10">
+                      View Details
+                      <ArrowRight className="ml-1 h-3 w-3" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
             ))}
           </div>
 

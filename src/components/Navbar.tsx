@@ -44,7 +44,7 @@ export const Navbar = () => {
                 className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-secondary/50 rounded-lg relative group"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-3/4 group-hover:left-1/8 transition-all duration-300 rounded-full" />
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-3/4 group-hover:-translate-x-1/2 transition-all duration-300 rounded-full" />
               </a>
             ))}
             <Button className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-full">

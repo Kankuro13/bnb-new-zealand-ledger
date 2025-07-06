@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Rocket, Shield, Clock, Heart, Zap } from "lucide-react";
 
 export const AboutPage = () => {
@@ -6,31 +8,29 @@ export const AboutPage = () => {
     {
       icon: Rocket,
       title: "Professional Excellence",
-      description: "We combine years of experience with proven methodologies to deliver exceptional accounting services that exceed expectations.",
-      gradient: "from-amber-600 to-yellow-600"
+      description: "We combine years of experience with proven methodologies to deliver exceptional accounting services that exceed expectations."
     },
     {
       icon: Shield,
       title: "Trusted Partnership",
-      description: "Build long-term relationships with our clients based on trust, reliability, and consistent delivery of professional accounting services.",
-      gradient: "from-orange-600 to-amber-600"
+      description: "Build long-term relationships with our clients based on trust, reliability, and consistent delivery of professional accounting services."
     },
     {
       icon: Clock,
       title: "Timely & Accurate",
-      description: "Efficient processing and meticulous attention to detail ensures your accounting needs are met on time, every time.",
-      gradient: "from-yellow-600 to-orange-600"
+      description: "Efficient processing and meticulous attention to detail ensures your accounting needs are met on time, every time."
     },
     {
       icon: Heart,
       title: "Small Business Focus",
-      description: "Specialized expertise in small business accounting with personalized service tailored to your unique requirements.",
-      gradient: "from-amber-700 to-orange-600"
+      description: "Specialized expertise in small business accounting with personalized service tailored to your unique requirements."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-20">
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <div className="min-h-screen bg-background pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
           <div className="order-2 lg:order-1">
@@ -40,7 +40,7 @@ export const AboutPage = () => {
             </div>
             
             <h1 className="text-5xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Professional
               </span>
               <br />
@@ -79,18 +79,16 @@ export const AboutPage = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-center mb-16">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Our Core Values
-            </span>
+          <h2 className="text-3xl font-bold text-center mb-16 text-primary">
+            Our Core Values
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 text-center overflow-hidden">
+              <Card key={index} className="hover:scale-105 transition-all duration-300 group border border-border text-center overflow-hidden">
                 <CardHeader className="relative pb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
-                    <value.icon className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                    <value.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
                     {value.title}
@@ -106,8 +104,73 @@ export const AboutPage = () => {
           </div>
         </div>
 
+        {/* History Section */}
+        <div className="mt-20">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 text-primary">
+              Our Journey
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              From humble beginnings to becoming a trusted accounting partner for hundreds of New Zealand businesses.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="flex space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
+                  2015
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Founded with Vision</h3>
+                  <p className="text-muted-foreground">Started as a small practice with a mission to provide personalized accounting services to New Zealand small businesses.</p>
+                </div>
+              </div>
+              
+              <div className="flex space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
+                  2018
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Digital Transformation</h3>
+                  <p className="text-muted-foreground">Embraced cloud-based accounting solutions and digital processes to better serve our growing client base.</p>
+                </div>
+              </div>
+              
+              <div className="flex space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
+                  2021
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Team Expansion</h3>
+                  <p className="text-muted-foreground">Grew our team of qualified professionals to include specialized expertise in payroll, tax planning, and business advisory.</p>
+                </div>
+              </div>
+              
+              <div className="flex space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
+                  2024
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Leading Innovation</h3>
+                  <p className="text-muted-foreground">Today, we serve over 300+ businesses across New Zealand, combining traditional accounting excellence with modern technology.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="B&B Tax team through the years"
+                className="rounded-2xl shadow-lg"
+              />
+              <div className="absolute inset-0 bg-primary/10 rounded-2xl" />
+            </div>
+          </div>
+        </div>
+
         <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-card to-secondary rounded-3xl p-12">
+          <div className="bg-card border border-border rounded-2xl p-12">
             <h3 className="text-3xl font-bold mb-6 text-foreground">Why Choose B&B Tax?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div>
@@ -126,6 +189,8 @@ export const AboutPage = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };

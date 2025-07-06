@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
 
 export const ContactPage = () => {
@@ -33,7 +35,9 @@ export const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-20">
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <div className="min-h-screen bg-background pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-2 mb-6">
@@ -191,6 +195,8 @@ export const ContactPage = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };

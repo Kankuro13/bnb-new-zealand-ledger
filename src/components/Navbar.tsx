@@ -12,6 +12,7 @@ export const Navbar = () => {
     { name: "About", href: "/about" },
     { name: "Team", href: "/team" },
     { name: "Testimonials", href: "/testimonials" },
+    { name: "Resources", href: "/resources" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -45,8 +46,8 @@ export const Navbar = () => {
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-3/4 group-hover:left-1/8 transition-all duration-300 rounded-full" />
               </a>
             ))}
-            <Button className="ml-4 bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-primary-foreground font-semibold px-6 rounded-full">
-              Get Quote
+            <Button className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-full">
+              Request Proposal
             </Button>
           </div>
 
@@ -78,8 +79,8 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <Button className="w-full mt-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full">
-              Get Quote
+            <Button className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+              Request Proposal
             </Button>
           </div>
         </div>

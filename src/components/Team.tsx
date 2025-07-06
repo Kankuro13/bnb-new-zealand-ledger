@@ -11,7 +11,7 @@ export const Team = () => {
       qualifications: "CA, CPA, AI Finance Cert",
       experience: "15+ years",
       specialty: "AI-Powered Tax Optimization",
-      gradient: "from-purple-500 to-pink-500"
+      color: "text-purple-600"
     },
     {
       name: "Marcus Rodriguez",
@@ -20,7 +20,7 @@ export const Team = () => {
       qualifications: "BComm, Xero Master, Tech Lead",
       experience: "12+ years",
       specialty: "Automated Payroll Systems",
-      gradient: "from-blue-500 to-cyan-500"
+      color: "text-blue-600"
     },
     {
       name: "Emma Thompson",
@@ -29,7 +29,7 @@ export const Team = () => {
       qualifications: "Tech MBA, Process Automation",
       experience: "10+ years",
       specialty: "Business Process Revolution",
-      gradient: "from-green-500 to-emerald-500"
+      color: "text-green-600"
     },
     {
       name: "David Kim",
@@ -38,7 +38,7 @@ export const Team = () => {
       qualifications: "CA, RegTech Specialist",
       experience: "14+ years",
       specialty: "Real-time Compliance Monitoring",
-      gradient: "from-orange-500 to-red-500"
+      color: "text-orange-600"
     }
   ];
 
@@ -53,7 +53,7 @@ export const Team = () => {
             <span className="text-accent font-mono text-sm tracking-wider uppercase">Elite Team</span>
           </div>
           <h2 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Visionary Experts
             </span>
           </h2>
@@ -65,20 +65,20 @@ export const Team = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="gradient-card hover:scale-105 transition-all duration-300 group border-0 overflow-hidden">
+            <Card key={index} className="hover:scale-105 transition-all duration-300 group border border-border overflow-hidden">
               <CardHeader className="text-center relative">
                 <div className="relative mb-6">
                   <img 
                     src={member.image}
                     alt={member.name}
-                    className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-xl group-hover:scale-110 transition-transform duration-500"
+                    className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-lg group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-2xl -z-10 opacity-50 group-hover:opacity-80 transition-opacity blur-sm`} />
+                  <div className="absolute -inset-2 bg-primary/20 rounded-2xl -z-10 opacity-50 group-hover:opacity-80 transition-opacity blur-sm" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
-                <p className={`bg-gradient-to-r ${member.gradient} bg-clip-text text-transparent font-semibold`}>
+                <p className={`${member.color} font-semibold`}>
                   {member.role}
                 </p>
               </CardHeader>
@@ -95,14 +95,14 @@ export const Team = () => {
                   </p>
                 </div>
                 <div className="flex justify-center space-x-4 pt-4">
-                  <div className={`w-8 h-8 bg-gradient-to-br ${member.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
-                    <Mail className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <Mail className="h-4 w-4 text-primary-foreground" />
                   </div>
-                  <div className={`w-8 h-8 bg-gradient-to-br ${member.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
-                    <Phone className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <Phone className="h-4 w-4 text-primary-foreground" />
                   </div>
-                  <div className={`w-8 h-8 bg-gradient-to-br ${member.gradient} rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform`}>
-                    <Linkedin className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <Linkedin className="h-4 w-4 text-primary-foreground" />
                   </div>
                 </div>
               </CardContent>

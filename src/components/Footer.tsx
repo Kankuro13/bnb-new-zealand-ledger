@@ -57,13 +57,21 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-6">Navigation</h4>
             <ul className="space-y-3">
-              {['Home', 'Services', 'About', 'Team', 'Testimonials', 'Contact'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'Services', path: '/services' },
+                { name: 'About', path: '/about' },
+                { name: 'Team', path: '/team' },
+                { name: 'Testimonials', path: '/testimonials' },
+                { name: 'Resources', path: '/resources' },
+                { name: 'Contact', path: '/contact' }
+              ].map((item) => (
+                <li key={item.name}>
                   <a 
-                    href={`#${item.toLowerCase()}`} 
+                    href={item.path} 
                     className="text-muted-foreground hover:text-primary transition-colors hover:translate-x-2 transform duration-200 inline-block"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}

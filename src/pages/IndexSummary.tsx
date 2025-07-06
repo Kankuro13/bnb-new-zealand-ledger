@@ -1,9 +1,80 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, CheckCircle, Sparkles, TrendingUp, Users, FileText, DollarSign, Star, MessageSquare, Zap } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ArrowRight, CheckCircle, Sparkles, TrendingUp, Users, FileText, DollarSign, Star, MessageSquare, Zap, Calculator, Shield, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import type { UseEmblaCarouselType } from "embla-carousel-react";
+
+type CarouselApi = UseEmblaCarouselType[1];
 
 export const IndexSummary = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [api]);
+
+  // Track current slide
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const heroSlides = [
+    {
+      title: "Uncover business value in volatility with B&B Tax",
+      subtitle: "",
+      description: "Our audit, tax, and consulting specialists help organizations like yours navigate today's accelerating rate of change.",
+      backgroundImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: "/lovable-uploads/183a6bc8-df45-4d4c-b13d-a992110190ac.png",
+      features: [
+        { icon: CheckCircle, text: "15+ Years Experience" },
+        { icon: TrendingUp, text: "500+ Happy Clients" },
+        { icon: Sparkles, text: "Complete Solutions" },
+        { icon: CheckCircle, text: "100% IRD Compliant" }
+      ]
+    },
+    {
+      title: "Professional Tax Excellence for New Zealand Businesses",
+      subtitle: "",
+      description: "Navigate complex tax requirements with confidence. Our qualified professionals provide strategic tax planning and compliance services to optimize your business performance.",
+      backgroundImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      features: [
+        { icon: Calculator, text: "Strategic Tax Planning" },
+        { icon: FileText, text: "GST & PAYE Filing" },
+        { icon: Shield, text: "Audit Protection" },
+        { icon: TrendingUp, text: "Tax Optimization" }
+      ]
+    },
+    {
+      title: "Transform your financial management with digital solutions",
+      subtitle: "",
+      description: "Leverage cutting-edge cloud technology and real-time insights to streamline operations, enhance accuracy, and drive informed business decisions.",
+      backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      features: [
+        { icon: Zap, text: "Cloud-Based Systems" },
+        { icon: BookOpen, text: "Real-Time Reporting" },
+        { icon: Users, text: "24/7 Access" },
+        { icon: DollarSign, text: "Cost-Effective" }
+      ]
+    }
+  ];
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Geometric background elements */}
@@ -11,81 +82,100 @@ export const IndexSummary = () => {
       <div className="geometric-shape w-64 h-64 top-1/3 -right-32" />
       <div className="geometric-shape w-80 h-80 bottom-1/4 -left-40" />
       
-      {/* Hero Section */}
+      {/* Hero Section with Slider */}
       <section id="home" className="pt-20 min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg" />
-        
-        {/* Floating elements */}
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-primary rounded-full animate-float opacity-60" />
-        <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-accent rounded-full animate-float opacity-40" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/3 left-1/6 w-8 h-8 bg-primary/50 rounded-full animate-float opacity-30" style={{ animationDelay: '4s' }} />
+        <div className="w-full relative">
+          <Carousel 
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+              duration: 30,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {heroSlides.map((slide, index) => (
+                <CarouselItem key={index}>
+                  {/* Full-screen background image */}
+                  <div 
+                    className="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center"
+                    style={{
+                      backgroundImage: `url(${slide.backgroundImage})`,
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+                    
+                    {/* Content Container */}
+                    <div className="relative z-20 w-full">
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                        <div className="max-w-3xl">
+                          <div className="flex items-center space-x-2 mb-6">
+                            <Sparkles className="h-5 w-5 text-yellow-400" />
+                            <span className="text-yellow-400 font-mono text-sm tracking-wider uppercase">Comprehensive Accounting Services</span>
+                          </div>
+                          
+                          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+                            {slide.title}
+                            {slide.subtitle && (
+                              <>
+                                <br />
+                                <span className="text-white/90 text-2xl md:text-3xl lg:text-4xl font-normal">{slide.subtitle}</span>
+                              </>
+                            )}
+                          </h1>
+                          
+                          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-12 max-w-2xl">
+                            {slide.description}
+                          </p>
+                          
+                          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                            <Link to="/contact">
+                              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-10 py-4 text-lg h-14 min-w-[220px] rounded-none">
+                                Discover how
+                              </Button>
+                            </Link>
+                          </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-up">
-              <div className="flex items-center space-x-2 mb-6">
-                <Sparkles className="h-5 w-5 text-accent" />
-                <span className="text-accent font-mono text-sm tracking-wider uppercase">Comprehensive Accounting Services</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  B&B Tax and
-                </span>
-                <br />
-                <span className="text-foreground">Accounting Service</span>
-                <br />
-                <span className="text-muted-foreground text-3xl md:text-4xl">Limited</span>
-              </h1>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-xl">
-                We specialize in providing comprehensive accounting services tailored to the needs of 
-                small businesses across New Zealand. Our experienced team is dedicated to helping you 
-                stay compliant, organized, and focused on growing your business.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 mb-12">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-white px-8 py-4 rounded-full text-lg font-semibold group">
-                    Get Free Consultation
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link to="/services">
-                  <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-full text-lg">
-                    Explore Services
-                  </Button>
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { icon: CheckCircle, text: "Experienced Team" },
-                  { icon: TrendingUp, text: "Small Business Focus" },
-                  { icon: Sparkles, text: "Complete Service" },
-                  { icon: CheckCircle, text: "IRD Compliance" }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3 group">
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <item.icon className="h-4 w-4 text-primary" />
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {slide.features.map((item, featureIndex) => (
+                              <div key={featureIndex} className="flex items-center space-x-3 text-white/90">
+                                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                                  <item.icon className="h-5 w-5 text-white" />
+                                </div>
+                                <span className="font-medium">{item.text}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item.text}</span>
+
+                    {/* Navigation Arrows */}
+                    <div className="absolute left-8 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
+                      <CarouselPrevious className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white w-12 h-12" />
+                    </div>
+                    <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
+                      <CarouselNext className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white w-12 h-12" />
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
             
-            <div className="relative">
-              <div className="relative z-10">
-                <img 
-                  src="/lovable-uploads/183a6bc8-df45-4d4c-b13d-a992110190ac.png"
-                  alt="B&B Tax and Accounting Service Logo"
-                  className="w-full max-w-md mx-auto rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+            {/* Slide indicators */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
+              {heroSlides.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-12 h-1 rounded-full transition-all duration-300 ${
+                    current === index ? 'bg-white' : 'bg-white/40 hover:bg-white/60'
+                  }`}
+                  onClick={() => api?.scrollTo(index)}
                 />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl transform scale-105 -z-10" />
+              ))}
             </div>
-          </div>
+          </Carousel>
         </div>
       </section>
 

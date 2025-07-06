@@ -61,7 +61,7 @@ export const ContactPage = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center">
                 <MessageSquare className="h-6 w-6 text-primary mr-3" />
-                Send Us a Message
+                Request for Proposal
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">

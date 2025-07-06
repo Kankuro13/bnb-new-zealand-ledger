@@ -83,7 +83,7 @@ export const IndexSummary = () => {
       <div className="geometric-shape w-80 h-80 bottom-1/4 -left-40" />
       
       {/* Hero Section with Slider */}
-      <section id="home" className="pt-20 min-h-screen flex items-center relative overflow-hidden">
+      <section id="home" className="pt-16 sm:pt-20 min-h-screen flex items-center relative overflow-hidden">
         <div className="w-full relative">
           <Carousel 
             setApi={setApi}
@@ -108,42 +108,42 @@ export const IndexSummary = () => {
                     
                     {/* Content Container */}
                     <div className="relative z-20 w-full">
-                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
                         <div className="max-w-3xl">
-                          <div className="flex items-center space-x-2 mb-6">
-                            <Sparkles className="h-5 w-5 text-yellow-400" />
-                            <span className="text-yellow-400 font-mono text-sm tracking-wider uppercase">Comprehensive Accounting Services</span>
+                          <div className="flex items-center space-x-2 mb-4 sm:mb-6">
+                            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400" />
+                            <span className="text-yellow-400 font-mono text-xs sm:text-sm tracking-wider uppercase">Comprehensive Accounting Services</span>
                           </div>
                           
-                          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+                          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 sm:mb-8 text-white">
                             {slide.title}
                             {slide.subtitle && (
                               <>
                                 <br />
-                                <span className="text-white/90 text-2xl md:text-3xl lg:text-4xl font-normal">{slide.subtitle}</span>
+                                <span className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl font-normal">{slide.subtitle}</span>
                               </>
                             )}
                           </h1>
                           
-                          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-12 max-w-2xl">
+                          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8 sm:mb-12 max-w-2xl">
                             {slide.description}
                           </p>
                           
-                          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                          <div className="flex flex-col sm:flex-row gap-4 mb-12 sm:mb-16">
                             <Link to="/contact">
-                              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-10 py-4 text-lg h-14 min-w-[220px] rounded-none">
+                              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg h-12 sm:h-14 w-full sm:w-auto sm:min-w-[220px] rounded-none">
                                 Discover how
                               </Button>
                             </Link>
                           </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                             {slide.features.map((item, featureIndex) => (
-                              <div key={featureIndex} className="flex items-center space-x-3 text-white/90">
-                                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                                  <item.icon className="h-5 w-5 text-white" />
+                              <div key={featureIndex} className="flex items-center space-x-2 sm:space-x-3 text-white/90">
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                                  <item.icon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                                 </div>
-                                <span className="font-medium">{item.text}</span>
+                                <span className="font-medium text-sm sm:text-base">{item.text}</span>
                               </div>
                             ))}
                           </div>
@@ -152,11 +152,11 @@ export const IndexSummary = () => {
                     </div>
 
                     {/* Navigation Arrows */}
-                    <div className="absolute left-8 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
-                      <CarouselPrevious className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white w-12 h-12" />
+                    <div className="absolute left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 hidden sm:block">
+                      <CarouselPrevious className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white w-10 h-10 sm:w-12 sm:h-12" />
                     </div>
-                    <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
-                      <CarouselNext className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white w-12 h-12" />
+                    <div className="absolute right-2 sm:right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 hidden sm:block">
+                      <CarouselNext className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white w-10 h-10 sm:w-12 sm:h-12" />
                     </div>
                   </div>
                 </CarouselItem>
@@ -164,11 +164,11 @@ export const IndexSummary = () => {
             </CarouselContent>
             
             {/* Slide indicators */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
+            <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 sm:space-x-3 z-30">
               {heroSlides.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-12 h-1 rounded-full transition-all duration-300 ${
+                  className={`w-8 sm:w-12 h-1 rounded-full transition-all duration-300 ${
                     current === index ? 'bg-white' : 'bg-white/40 hover:bg-white/60'
                   }`}
                   onClick={() => api?.scrollTo(index)}
